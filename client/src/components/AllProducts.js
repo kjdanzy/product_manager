@@ -21,20 +21,20 @@ const AllProducts = () => {
         <div>
             <span>-----------------------------------------------------------</span>
             <h1>All Products</h1>
-            <Link to="/product/create">Add New Product</Link>
+            <Link to="/product/create">Add New Product</Link><br />
             <ul>
                 {
                     productList.map((item, i) => {
                         return (
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title"><Link to={`/product/edit/${item._id}`} key={i}> {item.title}</Link></h4>
-                                    <p class="card-text">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h4 className="card-title" key={i}><Link to={`/product/detail/${item._id}`} key={i}>{item.title}</Link></h4>
+                                    {/* <p className="card-text">
                                         Price: {item.price}
                                     </p>
-                                    <p class="card-text">
+                                    <p className="card-text">
                                         {item.description}
-                                    </p>
+                                    </p> */}
                                 </div>
                             </div>
                         )
