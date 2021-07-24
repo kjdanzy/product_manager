@@ -16,7 +16,7 @@ const ProductDetails = (props) => {
                 setProductDetail(res.data.product)
             })
             .catch(err => console.log("Something caused the following error:  ", err))
-    }, [])
+    }, [productId])
 
     return (
         <div>

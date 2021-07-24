@@ -3,8 +3,8 @@ import axios from 'axios'
 import { navigate } from '@reach/router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const EditProduct = (props) => {
-    const { productId } = props
+const EditProduct = (productId) => {
+    
     const [productDetail, setProductDetail] = useState({
         title: "",
         price: "",
@@ -22,7 +22,7 @@ const EditProduct = (props) => {
                 setProductDetail(res.data.product)
             })
             .catch(err => console.log("Something caused the following error:  ", err))
-    }, [])
+    }, [productId])
 
     const onSubmitHandler = (event) => {
         event.preventDefault();

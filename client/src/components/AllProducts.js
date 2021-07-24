@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Link, navigate } from '@reach/router'
+import { Link } from '@reach/router'
 
 const AllProducts = () => {
     const [productList, setProductList] = useState([])
@@ -38,18 +38,11 @@ const AllProducts = () => {
                 {
                     productList.map((item, i) => {
                         return (
-                            <div className="card">
-                                <div className="card-body">
-                                    <h3>{item.title}</h3>
-                                    <Link to={`/product/detail/${item._id}`} key={i + "e"} className="btn btn-info ml-3">Details</Link>
-                                    <button onClick={(e) => deleteProductHandler(e, item._id)} className="btn btn-danger ml-3">Delete</button>
-                                    {/* <p className="card-text">
-                                        Price: {item.price}
-                                    </p>
-                                    <p className="card-text">
-                                        {item.description}
-                                    </p> */}
-
+                            <div className="card"  key={i+"c"}>
+                                <div className="card-body" key={i+"cb"}>
+                                    <h3 key={i}>{item.title}</h3>
+                                    <Link to={`/product/detail/${item._id}`} key={i+"l"} className="btn btn-info ml-3">Details</Link>
+                                    <button onClick={(e) => deleteProductHandler(e, item._id)} key={i+"b"} className="btn btn-danger ml-3">Delete</button>
                                 </div>
                             </div>
                         )
