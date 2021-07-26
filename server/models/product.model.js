@@ -11,7 +11,7 @@ const ProductSchema = new mongoose.Schema({
         type: Number,
         required: [true, "The price is required"],
         min: [0, "The price must be more than 0; no freebies here!"],
-        max: [1000000000, "So, you'd like to by the company?! Otherwise, we don't have anything that expensive here!"],
+        max: [1000000000, "So, do you really think someone will pay that much?!  We're not selling anything that expensive here!"],
     },
     description: {
         type: String,
